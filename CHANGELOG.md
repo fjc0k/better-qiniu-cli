@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/fjc0k/better-qiniu-cli/compare/v0.0.2...v0.1.0) (2018-09-20)
+
+
+### Features
+
+* add clear module ([9d56540](https://github.com/fjc0k/better-qiniu-cli/commit/9d56540))
+
+
+
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/fjc0k/better-qiniu-cli/compare/v0.0.1...v0.0.2) (2018-09-20)
 
