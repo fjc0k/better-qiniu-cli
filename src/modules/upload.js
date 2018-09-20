@@ -4,14 +4,14 @@ const _ = require('lodash')
 
 module.exports = ({ qiniu, mac }, { from, to, cwd = process.cwd() }) => {
   return new Promise((resolve, reject) => {
-    const config = new qiniu.conf.Config()
-    const formUploader = new qiniu.form_up.FormUploader(config)
-    const putExtra = new qiniu.form_up.PutExtra()
     from = _.castArray(from)
     const files = globby.sync(from, { cwd, onlyFiles: true })
     Promise
       .all(files.map(file => {
         return new Promise((resolve, reject) => {
+          const config = new qiniu.conf.Config()
+          const formUploader = new qiniu.form_up.FormUploader(config)
+          const putExtra = new qiniu.form_up.PutExtra()
           const putPolicy = new qiniu.rs.PutPolicy({
             scope: `${to}:${file}` // 覆盖
           })
