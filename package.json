@@ -1,0 +1,49 @@
+{
+  "name": "better-qiniu-cli",
+  "version": "0.0.1",
+  "description": "更好的 Node.js 七牛云命令行工具。",
+  "main": "src/index.js",
+  "bin": {
+    "qiniu": "./src/index.js"
+  },
+  "author": {
+    "name": "Jay Fong",
+    "email": "fjc0kb@gmail.com",
+    "url": "https://github.com/fjc0k"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fjc0k/better-qiniu-cli.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "qiniu",
+    "cli"
+  ],
+  "eslintConfig": {
+    "root": true,
+    "extends": "@lopo/lopo",
+    "rules": {
+      "no-await-in-loop": 0
+    }
+  },
+  "scripts": {
+    "release": "standard-version -a",
+    "postrelease": "git push --follow-tags origin master && npm publish",
+    "test": "node src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "globby": "^8.0.1",
+    "lodash": "^4.17.10",
+    "qiniu": "^7.2.1"
+  },
+  "devDependencies": {
+    "@lopo/eslint-config-lopo": "^0.0.7",
+    "eslint": "^5.1.0",
+    "standard-version": "^4.4.0"
+  }
+}
