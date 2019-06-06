@@ -12,11 +12,12 @@ module.exports = ({ qiniu, mac }, { from, to, prefix = '', cwd = process.cwd() }
           const config = new qiniu.conf.Config()
           const formUploader = new qiniu.form_up.FormUploader(config)
           const putExtra = new qiniu.form_up.PutExtra()
+          const key = `${prefix}/${file}`.replace(/\/{2,}/g, '/').replace(/^\/+/, '')
           const putPolicy = new qiniu.rs.PutPolicy({
-            scope: `${to}:${prefix}/${file}`.replace(/\/{2,}/g, '/').replace(/^\/+/, '') // 覆盖
+            scope: `${to}:${key}` // 覆盖
           })
           const uploadToken = putPolicy.uploadToken(mac)
-          formUploader.putFile(uploadToken, file, path.resolve(cwd, file), putExtra, (respErr, respBody, respInfo) => {
+          formUploader.putFile(uploadToken, key, path.resolve(cwd, file), putExtra, (respErr, respBody, respInfo) => {
             if (respErr || respInfo.statusCode !== 200) {
               reject(respErr)
             } else {
