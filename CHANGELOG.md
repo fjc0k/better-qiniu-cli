@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/fjc0k/better-qiniu-cli/compare/v0.1.1...v0.2.0) (2019-06-06)
+
+
+### Features
+
+* **upload:** 支持设置 prefix ([04c8405](https://github.com/fjc0k/better-qiniu-cli/commit/04c8405))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/fjc0k/better-qiniu-cli/compare/v0.1.0...v0.1.1) (2019-04-03)
 
