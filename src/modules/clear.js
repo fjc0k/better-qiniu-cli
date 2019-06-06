@@ -5,21 +5,19 @@ module.exports = async ({ qiniu, mac }, { bucket, prefix = '' }) => {
     bucketManager.listPrefix(bucket, { prefix }, (err, { items } = {}, respInfo) => {
       if (err || respInfo.statusCode !== 200) {
         reject(err)
+      } else if (items && items.length) {
+        const deleteOperations = items.map(item => {
+          return qiniu.rs.deleteOp(bucket, item.key)
+        })
+        bucketManager.batch(deleteOperations, (err, respBody) => {
+          if (err) {
+            reject(err)
+          } else {
+            resolve(respBody)
+          }
+        })
       } else {
-        if (items && items.length) {
-          const deleteOperations = items.map(item => {
-            return qiniu.rs.deleteOp(bucket, item.key)
-          })
-          bucketManager.batch(deleteOperations, (err, respBody) => {
-            if (err) {
-              reject(err)
-            } else {
-              resolve(respBody)
-            }
-          })
-        } else {
-          resolve()
-        }
+        resolve()
       }
     })
   })
