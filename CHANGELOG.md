@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https:///github.com/fjc0k/better-qiniu-cli/compare/v1.0.2...v1.0.3) (2019-06-19)
+
+
+### Bug Fixes
+
+* typescript 应为生产依赖 ([2a68b4a](https:///github.com/fjc0k/better-qiniu-cli/commits/2a68b4a))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https:///github.com/fjc0k/better-qiniu-cli/compare/v1.0.1...v1.0.2) (2019-06-19)
 
