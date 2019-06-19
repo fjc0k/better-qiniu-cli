@@ -1,6 +1,6 @@
 {
   "name": "better-qiniu-cli",
-  "version": "0.0.0",
+  "version": "0.2.1",
   "description": "更好的 Node.js 七牛云命令行工具。",
   "main": "lib/index.js",
   "bin": {
@@ -32,7 +32,8 @@
   "scripts": {
     "build": "tsc",
     "test": "cd test && node ../node_modules/.bin/ts-node ../src/cli.ts",
-    "release": "standard-version --commit-all --no-verify && git push --follow-tags origin master"
+    "release": "standard-version --commit-all --no-verify && git push --follow-tags origin master",
+    "release:major": "standard-version --commit-all --no-verify --release-as major && git push --follow-tags origin master"
   },
   "eslintConfig": {
     "root": true,
