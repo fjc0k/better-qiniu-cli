@@ -32,8 +32,8 @@
   "scripts": {
     "build": "tsc",
     "test": "cd test && node ../node_modules/.bin/ts-node ../src/cli.ts",
-    "release": "standard-version --commit-all --no-verify && git push --follow-tags origin master",
-    "release:major": "standard-version --commit-all --no-verify --release-as major && git push --follow-tags origin master"
+    "release": "standard-version --commit-all --no-verify && git push --follow-tags origin master && npm publish",
+    "release:major": "standard-version --commit-all --no-verify --release-as major && git push --follow-tags origin master && npm publish"
   },
   "eslintConfig": {
     "root": true,
