@@ -8,11 +8,13 @@ export interface RefreshCdnCacheOptions {
 
 export const refreshCdnCache: ModuleFunction<RefreshCdnCacheOptions> = async ({ mac, options }) => {
   return new Promise((resolve, reject) => {
+    const { files = [], dirs = [] } = options
+
     const cdnManager = new cdn.CdnManager(mac)
 
     cdnManager.refreshUrlsAndDirs(
-      options.files || [],
-      options.dirs || [],
+      files,
+      dirs,
       (err, resBody, resInfo: QiniuHttpResponseInfo) => {
         if (err) {
           reject(err)

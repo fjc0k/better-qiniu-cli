@@ -24,7 +24,7 @@ export interface Config {
   tasks: Array<ValueOf<{
     [K in ModuleName]: {
       type: K,
-      options: Parameters<Modules[K]>[0],
+      options: Parameters<Modules[K]>[0]['options'],
     }
   }>>,
 }
