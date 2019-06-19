@@ -1,0 +1,45 @@
+import path from 'path'
+import { Config } from '../src'
+
+export const config: Config = {
+  accessKey: '****',
+  secretKey: '****',
+  tasks: [
+    {
+      type: 'clearBucket',
+      options: {
+        bucket: 'qiniu-test',
+        prefix: 'test',
+      },
+    },
+    {
+      type: 'upload',
+      options: {
+        bucket: 'qiniu-test',
+        from: ['**/*', '!**/*.png'],
+        to: 'test',
+        cwd: path.join(__dirname, 'dist'),
+      },
+    },
+    {
+      type: 'upload',
+      options: {
+        bucket: 'qiniu-test',
+        from: '**/*',
+        to: 'hello',
+        cwd: path.join(__dirname, 'dist'),
+      },
+    },
+    {
+      type: 'refreshCdnCache',
+      options: {
+        files: [
+          'http://ptbp1zrhg.bkt.clouddn.com/test/assets/all.css',
+        ],
+        dirs: [
+          'http://ptbp1zrhg.bkt.clouddn.com/test/assets',
+        ],
+      },
+    },
+  ],
+}
