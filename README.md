@@ -16,31 +16,31 @@ npm i better-qiniu-cli -D
 
 ### 配置
 
-在项目根目录下新建 `qiniu.config.js` 文件，写入配置：
+在项目根目录下新建 `qiniu.config.ts` 文件，写入配置：
 
 ```js
-module.exports = {
+import { Config } from 'better-qiniu-cli'
+
+export const config: Config = {
   accessKey: 'Access 密钥',
   secretKey: 'Secret 密钥',
   tasks: [
-    ['任务名1', {
-      dir: '/'
-    }],
-    ['任务名2', {
-      dir: '/'
-    }]
+    {
+      type: '任务类型',
+      options: {
+        // 任务选项
+      }
+    },
   ]
 }
 ```
+
+**注意：** `tasks` 中指定的任务将依次顺序执行。
 
 ### 使用
 
 ```bash
 yarn qiniu
-
-# 或者
-
-npx qiniu
 ```
 
 在 `package.json` 中你可以这么使用：

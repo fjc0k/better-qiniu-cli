@@ -1,5 +1,8 @@
-*.log
-.vscode
 node_modules
-qiniu.config.js
+.DS_Store
+*.log
+*_cache
+*_temp
 dist
+lib
+coverage
