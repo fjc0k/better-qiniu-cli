@@ -1,6 +1,6 @@
 import * as modules from './modules'
 import { auth } from 'qiniu'
-import { ValueOf } from 'vtils'
+import { OneOrMore, ValueOf } from 'vtils'
 
 type Modules = typeof modules
 type ModuleName = keyof Modules
@@ -28,3 +28,5 @@ export interface Config {
     }
   }>>,
 }
+
+export type CliConfig = OneOrMore<Config>
