@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https:///github.com/fjc0k/better-qiniu-cli/compare/v1.0.3...v1.1.0) (2019-07-17)
+
+
+### Features
+
+* 支持多账号 ([22ed6a2](https:///github.com/fjc0k/better-qiniu-cli/commits/22ed6a2))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https:///github.com/fjc0k/better-qiniu-cli/compare/v1.0.2...v1.0.3) (2019-06-19)
 
